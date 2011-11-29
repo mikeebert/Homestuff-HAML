@@ -6,7 +6,8 @@ HomestuffHAML::Application.routes.draw do
   delete "sessions", controller: "sessions", action: "destroy", as: :delete_session
 
   resources :users  
-
+  resources :items
+  
   root to: "users#new"
   
 end

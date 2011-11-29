@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  acquired_on: 2011-11-29
+  condition_id: 1
+  category_id: 1
+  user_id: 1
+
+two:
+  name: MyString
+  acquired_on: 2011-11-29
+  condition_id: 1
+  category_id: 1
+  user_id: 1
