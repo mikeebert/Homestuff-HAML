@@ -1,0 +1,54 @@
+Homestuff-HAML
+==============
+This is a rewrite exercise of the "Homestuff" application I made in Code Academy using HAML.
+
+Goals of this rewrite:
+- practice, practice, practice everything we've learned by building from scratch
+- practice using the HAML language
+- practice using Javascript for searching and adding new items.
+- practice using the JQuery-UI for a calendar of when an item was purchased.
+
+User stories
+============
+1) A visitor to the site will find an information page that allows them to create an account. There will also be a login for current users.
+
+2) After an account is created it will automatically log them in and/or after a user logs in it will take them to their items page where they can add new items and view their current items. (AJAX form so that they don't have to leave the page)
+
+3) When a user adds a new item they will be able to provide a description, what category the item is in, condition it was in and the date it was acquired.
+
+4) A user's item list will be paginated for every 10 items.
+
+5) A user can search their items by description, condition, category
+
+Phase 2:
+- A user can upload a photo of the item.
+- A user can search by the year it was purchased
+- A user can sort their list of items by the header rows
+
+
+MODELS
+======
+USER
+First_name:string (validate presence)
+Last_name:string (validate presence)
+email:string (validate with regex)
+password_digest:string (bcrypt_ruby)
+has_many :items
+
+ITEMS
+Name:string
+Acquired_on:date
+condition_id:integer
+category_id:integer
+user_id:integer
+belongs_to :user
+belongs_to :category
+belongs_to :condition
+
+CATEGORY: (seed)
+- list of categories
+
+CONDITION: (seed)
+-poor through excellent
+
+
