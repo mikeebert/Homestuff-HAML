@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   
   def destroy
     reset_session
-    render :new, notice: "You have successfully logged out."
+    redirect_to root_url, notice: "You have successfully logged out."
   end
   
 end

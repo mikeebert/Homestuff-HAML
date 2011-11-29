@@ -1,0 +1,14 @@
+=form_for(@item) do |form|
+  %p
+    Name:
+    =form.text_field :name
+  %p
+    Acquired On:
+    =form.date_select :acquired_on
+  %p
+    Category:
+    =form.collection_select :category_id, Category.all, :id, :title
+  %p
+    Condition:
+    =form.collection_select :condition_id, Condition.all, :id, :shape
+  %p= form.submit

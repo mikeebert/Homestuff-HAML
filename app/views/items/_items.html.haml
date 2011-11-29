@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th Item
+    %th Acquired 
+    %th Category
+    %th Condition
+    
+  - @items.each do |item|
+    %tr
+      %td= link_to item.name, item_url(item)
+      %td= item.acquired_on.strftime("%b %Y")
+      %td= item.category.title
+      %td= item.condition.shape

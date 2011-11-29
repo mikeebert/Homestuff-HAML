@@ -22,11 +22,11 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = @user.item.find(params[:item])
+    @item = @user.items.find(params[:id])
   end
   
   def edit
-    @item = @user.item.find(params[:item])      
+    @item = @user.items.find(params[:id])      
   end
   
   def update

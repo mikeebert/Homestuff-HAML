@@ -1,0 +1,15 @@
+%h3= @item.name
+
+%p 
+  Acquired: 
+  = @item.acquired_on.strftime('%b %d, %Y')
+  
+%p 
+  Category: 
+  = @item.category.title
+  
+%p
+  Condition: 
+  = @item.condition.shape
+  
+=link_to "Edit Item", edit_item_url(@item)
