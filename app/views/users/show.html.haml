@@ -10,5 +10,7 @@
   = @user.email
   
 %p
-  = link_to "Edit Account", edit_user_url(@user) | 
+  = link_to "Edit Account", edit_user_url(@user)
+
+%p 
   = link_to "Delete account", user_url(@user), method: "delete", confirm: "Are you sure you want to delete your account?"

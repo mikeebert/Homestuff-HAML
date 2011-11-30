@@ -8,6 +8,6 @@ HomestuffHAML::Application.routes.draw do
   resources :users  
   resources :items
   
-  root to: "users#new"
+  root to: "items#index"
   
 end

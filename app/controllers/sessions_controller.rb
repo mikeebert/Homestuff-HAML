@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:uid] = user.id
-      redirect_to user, notice: "Welcome back, #{user.first_name}. Thank you for logging in."
+      redirect_to root_url, notice: "Welcome back, #{user.first_name}. Thank you for logging in."
     else
       render :new, notice: "Please try again."
     end
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   
   def destroy
     reset_session
-    redirect_to root_url, notice: "You have successfully logged out."
+    redirect_to root_url
   end
   
 end

@@ -50,10 +50,14 @@ table {
 /*=====================================*/
 
 body {
-  font-family:Verdana;
+  font-family: 'Quattrocento Sans', sans-serif;
   margin: 10px auto;
   width: 960px;
   padding: 10px;
+}
+
+p {
+	padding: 5px	0;
 }
 
 #header {
@@ -76,16 +80,21 @@ h2 {
 	
 }
 
+h3 {
+  font-size: 18px;
+  font-weight:bold;
+  padding-bottom: 5px;
+	
+}
 
 #signup {
 	width: 325px;
-	height: 190px;
+	height: 195px;
 	margin: 10px 0px 5px 0px;
 	float: right;
-	padding: 0 10px 10px 10px;
+	padding: 10px;
 	background-color: #a1eca3;
 	border-radius: 10px;
-	line-height: 28px;
 	font-size: 14px;
 }
   
@@ -101,10 +110,14 @@ h2 {
 }
 
 .notice {
-	margin: 5px;	
-	background-color: #2688f3;
+	margin: 5px;
+	padding: 5px;	
+	background-color: #ddedfd;
 }
 
+table {
+	
+}
 table th {
   text-align:left;
   font-size: 14px;
@@ -114,8 +127,15 @@ table th {
 
 table td {
   padding-right: 15px;
+  padding-top: 5px;
 }
 
 #new_link {
   padding: 10px 0;
 }
+
+#new_form {
+  display: none;
+  margin-bottom: 10px;
+}
+

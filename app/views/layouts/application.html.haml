@@ -4,6 +4,8 @@
     %titleHomestuffHAML
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Quattrocento+Sans'
+    = stylesheet_link_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/redmond/jquery-ui.css'
     = csrf_meta_tags
 
   %body
@@ -21,9 +23,9 @@
                 =submit_tag "Sign In"
         -else
           %ul
-            %li Welcome, #{current_user.first_name}
+            %li Welcome, #{@user.first_name}
             %li= link_to "My Stuff", items_url
-            %li= link_to "My Account", user_url(current_user)
+            %li= link_to "My Account", user_url(@user)
             %li= link_to "Logout", delete_session_url, method: "delete"
       
       %h1 HomeStuff

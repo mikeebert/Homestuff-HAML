@@ -2,4 +2,7 @@
 
 %p#new_link= link_to 'Add New Item', new_item_url
 
-= render 'items'      
+%div#new_form 
+  = render 'form'
+  
+= render 'items'

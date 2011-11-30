@@ -5,5 +5,26 @@
 // the compiled file.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+  
+  $("#new_link").click(function(event){
+    $("#new_form").slideToggle();
+    event.preventDefault();
+  });  
+  
+  
+	$("#item_acquired_on").datepicker({
+		changeMonth: true, 
+		end_year:2011,
+		changeYear: true
+		});
+	
+})
+
+// $(document).ready(function() {
+//     $('.new_item_form').editable('#new_form');
+// });

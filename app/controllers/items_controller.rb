@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
 
-  before_filter :current_user
+  before_filter :require_user
   
   def index
     @items = @user.items.all
+    @item = Item.new
   end
 
   def new
