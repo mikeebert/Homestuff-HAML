@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_filter :require_user
   
   def index
-    @items = @user.items.all
+    @items = @user.items.order("acquired_on DESC").page(params[:page]).per(10)
     @item = Item.new
   end
 

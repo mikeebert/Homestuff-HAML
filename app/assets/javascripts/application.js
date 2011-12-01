@@ -14,14 +14,15 @@ $(function() {
   $("#new_link").click(function(event){
     $("#new_form").slideToggle();
     event.preventDefault();
+    $("#item_name").focus();
   });  
   
   
-	$("#item_acquired_on").datepicker({
-		changeMonth: true, 
-		end_year:2011,
-		changeYear: true
-		});
+  // $("#item_acquired_on").datepicker({
+  //  changeMonth: true, 
+  //  end_year:2011,
+  //  changeYear: true
+  //  });
 	
 })
 
