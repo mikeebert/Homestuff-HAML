@@ -1,4 +1,4 @@
-%table
+%table.items
   %tr
     %th Item
     %th Acquired 
@@ -7,7 +7,7 @@
     
   - @items.each do |item|
     %tr
-      %td= link_to item.name, item_url(item)
+      %td= link_to item.name, edit_item_url(item), class: 'item_link', :id => dom_id(item), :remote => true
       %td= item.acquired_on.strftime("%b %Y")
       %td= item.category.title
       %td= item.condition.shape

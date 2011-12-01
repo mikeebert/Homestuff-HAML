@@ -7,24 +7,26 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require jquery.purr
+//= require best_in_place
 //= require_tree .
 
 $(function() {
-  
-  $("#new_link").click(function(event){
-    $("#new_form").slideToggle();
+   
+  $(".new_link").click(function(event){
+    $("#new_form").toggle();
     event.preventDefault();
     $("#item_name").focus();
   });  
-  
-  
+    
+})
   // $("#item_acquired_on").datepicker({
   //  changeMonth: true, 
   //  end_year:2011,
   //  changeYear: true
   //  });
 	
-})
+
 
 // $(document).ready(function() {
 //     $('.new_item_form').editable('#new_form');

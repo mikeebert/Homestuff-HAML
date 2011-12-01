@@ -8,6 +8,7 @@ gem 'rails', '3.1.2'
 gem 'sqlite3'
 gem 'haml'
 gem 'kaminari'
+gem 'best_in_place'
 
 # Gems used only for assets and not required
 # in production environments by default.

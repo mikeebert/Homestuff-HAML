@@ -1,9 +1,12 @@
 %h2 Your items
 
-%p#new_link= link_to 'Add New Item', new_item_url
+%span.new_link= link_to 'Add New Item', new_item_url
 
-%div#new_form 
+%div#new_form
+  %h3 New Item
   = render 'form'
+
+%div#edit_form
   
 = render 'items'
 

@@ -28,7 +28,7 @@
             %li= link_to "My Account", user_url(@user)
             %li= link_to "Logout", delete_session_url, method: "delete"
       
-      %h1 HomeStuff
+      %h1= link_to "HomeStuff", items_url
       %em The best place on the web to keep your stuff
     
     
