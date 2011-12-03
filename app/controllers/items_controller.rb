@@ -31,14 +31,15 @@ class ItemsController < ApplicationController
     @item = @user.items.find(params[:id])  
     
     respond_to do |format|
-      format.js
+      format.js 
       format.html
     end
           
   end
   
   def update
-    @item = @user.item.find(params[:id])
+    puts @user.inspect
+    @item = @user.items.find(params[:id])
     @item.update_attributes(params[:item])
 
     if @item.save
