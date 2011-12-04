@@ -2,7 +2,7 @@
   %h3 Edit Item  
 
   %table
-    =form_for(@item, :remote => true) do |form|
+    =form_for(@item) do |form|
       %tr
         %td Name:
         %td=form.text_field :name

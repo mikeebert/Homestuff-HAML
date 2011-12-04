@@ -43,9 +43,10 @@ class ItemsController < ApplicationController
     @item.update_attributes(params[:item])
 
     if @item.save
-      respond_to do |format|
-        format.js
-      end
+      redirect_to items_url, notice: "Item successfully updated."
+      # respond_to do |format|
+      #         format.js
+      #       end
     else
       render :new, notice: "There was an error saving your item. Please try again."
     end    

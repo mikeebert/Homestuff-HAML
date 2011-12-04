@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       session[:uid] = user.id
       redirect_to root_url, notice: "Welcome back, #{user.first_name}. Thank you for logging in."
     else
-      render :new, notice: "Please try again."
+      redirect_to new_user_url, notice: "Login failed. Please try again or create an account."
     end
   end
   
