@@ -3,7 +3,14 @@ class ItemsController < ApplicationController
   before_filter :require_user
   
   def index
-    @items = @user.items.order("name ASC").page(params[:page]).per(10)
+    if params[:item]
+      search_term = params[:item]
+      @items = @user.items.where("name LIKE ?", "%#{search_term}%")
+      @items = @items.order("name ASC").page(params[:page]).per(10)
+    else
+      @items = @user.items.order("name ASC").page(params[:page]).per(10)
+    end
+    
     @item = Item.new
     
   end

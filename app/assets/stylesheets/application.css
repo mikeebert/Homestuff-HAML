@@ -98,6 +98,10 @@ table td {
   padding-top: 5px;
 }
 
+table td.cancel {
+	font-size: 13px;
+}
+
 .new_link {
   padding: 10px 0 10px 0px;
 }
@@ -107,8 +111,8 @@ table td {
   display: none;
   margin: 10px 10px	10px	10px;
   padding: 10px 20px;
-  float:right;
 	background-color: #a9fc9d;
+	width: 300px;
 }
 
 #edit_form {
@@ -129,4 +133,14 @@ table.items {
 }
 
 #form_box {
+	float: right;
+}
+
+#cancel_button {
+	float: right;
+	margin-top: -20px;
+}
+
+.cancel_link {
+	font-size: 12px;
 }

@@ -6,8 +6,14 @@
   %h3 New Item
   = render 'form'
 
-%div#form_box
-  
+%span.form_box
+
+%p
+  =form_tag items_url, :method => :get do
+    =text_field_tag :item, (params[:item])
+    =submit_tag 'Search' 
+    %span.cancel_link=link_to "Reset", items_url
+
 = render 'items'
 
 #pagination
