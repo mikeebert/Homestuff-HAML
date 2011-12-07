@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
     @item = @user.items.find(params[:id])  
     
     respond_to do |format|
-      format.js 
+      format.js #:format => nil
       format.html
     end
           

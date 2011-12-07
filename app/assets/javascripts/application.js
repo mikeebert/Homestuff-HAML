@@ -14,8 +14,8 @@
 $(function() {
    
   $(".new_link").click(function(event){
-    $("#new_form").toggle();
     event.preventDefault();
+    $("#new_form").toggle();
     $("#item_name").focus();
   });  
     
