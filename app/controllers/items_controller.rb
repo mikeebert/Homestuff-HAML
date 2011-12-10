@@ -3,14 +3,18 @@ class ItemsController < ApplicationController
   before_filter :require_user
   
   def index
+    @items = @user.items.scoped
+
+    if params[:category]
+      @items = @items.where(:category_id => params[:category]).page(params[:page]).per(10)      
+    end
+
     if params[:item]
-      search_term = params[:item]
-      @items = @user.items.where("name LIKE ?", "%#{search_term}%")
-      @items = @items.order("name ASC").page(params[:page]).per(10)
-    else
-      @items = @user.items.order("name ASC").page(params[:page]).per(10)
+       search_term = params[:item]
+       @items = @items.where("name LIKE ?", "%#{search_term}%").page(params[:page]).per(10)
     end
     
+    @items = @items.order("name ASC").page(params[:page]).per(10)
     @item = Item.new
     
   end
@@ -60,7 +64,7 @@ class ItemsController < ApplicationController
   end
   
   def destroy
-    @item = @user.item.find(params[:id])
+    @item = @user.items.find(params[:id])
     @item.destroy
     redirect_to items_url, notice: "Item has been deleted."
   end

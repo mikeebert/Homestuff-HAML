@@ -1,18 +1,20 @@
-%h2 Your items
+%h2 Your Items
+#search_form
+  =form_tag items_url, :method => :get do
+    =text_field_tag :item, (params[:item])
+    =select_tag :category, options_from_collection_for_select(Category.all, :id, :title, params[:category]), prompt: 'Select a Category'
+    =submit_tag 'Search' 
+    %span.cancel_link=link_to "Reset", items_url
 
-%span.new_link= link_to 'Add New Item', new_item_url
+%div.clear
+
+%div.new_link= link_to 'Add New Item', new_item_url
 
 %div#new_form
   %h3 New Item
   = render 'form'
 
 %span.form_box
-
-%p
-  =form_tag items_url, :method => :get do
-    =text_field_tag :item, (params[:item])
-    =submit_tag 'Search' 
-    %span.cancel_link=link_to "Reset", items_url
 
 = render 'items'
 

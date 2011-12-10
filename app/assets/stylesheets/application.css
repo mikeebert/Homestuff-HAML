@@ -113,6 +113,11 @@ table td.cancel {
   padding: 10px 20px;
 	background-color: #a9fc9d;
 	width: 300px;
+	-webkit-box-shadow: 2px 5px 2px #888;
+  -moz-box-shadow: 2px 5px 2px #888;
+  box-shadow: 2px 3px 2px #888;
+  
+	
 }
 
 #edit_form {
@@ -121,6 +126,10 @@ table td.cancel {
   padding: 10px 20px;
   float:right;
 	background-color: #b0ddfe;
+	-webkit-box-shadow: 2px 5px 2px #888;
+  -moz-box-shadow: 2px 5px 2px #888;
+  box-shadow: 2px 3px 2px #888;
+	
 }
 
 #pagination {
@@ -130,6 +139,10 @@ table td.cancel {
 table.items {
 	margin-top: 10px;
 	width: 550px;
+}
+
+table.items td.delete_item {
+  text-align:center;
 }
 
 #form_box {
@@ -143,4 +156,12 @@ table.items {
 
 .cancel_link {
 	font-size: 12px;
+}
+
+#search_form {
+  float:left;
+}
+
+.clear {
+  clear:both;
 }

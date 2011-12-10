@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:uid] = @user.id
-      redirect_to @user, notice: "Account successfully created"
+      redirect_to items_url, notice: "Account successfully created! Get started by adding your items below."
     else
       render :new, notice: "There was an error creating your account. Please try again."
     end

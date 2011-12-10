@@ -4,6 +4,7 @@
     %th Acquired 
     %th Category
     %th Condition
+    %th remove
     
   - @items.each do |item|
     %tr
@@ -11,3 +12,4 @@
       %td= item.acquired_on.strftime("%b %Y")
       %td= item.category.title
       %td= item.condition.shape
+      %td.delete_item= link_to "x", item, confirm: "Are you sure?", method: :delete
