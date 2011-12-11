@@ -14,4 +14,5 @@
       %td=form.collection_select :condition_id, Condition.all, :id, :shape
     %tr
       %td= form.submit
-      %td.cancel= link_to "Cancel", items_url
+%span#cancel_button
+  = link_to "Cancel", items_url
