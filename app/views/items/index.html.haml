@@ -1,7 +1,8 @@
 %h2 Your Items
 #search_form
   =form_tag items_url, :method => :get do
-    =text_field_tag :item, (params[:item])
+    /=text_field_tag :item,  (params[:item])
+    = autocomplete_field :field, :item_name, autocomplete_item_name_path 
     =select_tag :category, options_from_collection_for_select(Category.all, :id, :title, params[:category]), prompt: 'Select a Category'
     =submit_tag 'Search' 
     %span.cancel_link=link_to "Reset", items_url

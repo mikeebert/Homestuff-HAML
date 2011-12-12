@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'haml'
 gem 'kaminari'
 gem 'best_in_place'
+gem 'rails3-jquery-autocomplete', :git => 'git://github.com/gmassanek/rails3-jquery-autocomplete.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

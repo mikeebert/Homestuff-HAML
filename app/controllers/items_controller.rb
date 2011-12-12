@@ -1,19 +1,21 @@
 class ItemsController < ApplicationController
 
   before_filter :require_user
+  autocomplete :item, :name, :full => true, :autofocus => true
   
   def index
-    @items = @user.items.scoped
+    # @items = @user.items.scoped
+    @items = @user.items
+
+    if params[:field].present?
+      search_term = params[:field][:item_name]
+      @items = @items.where('name like ?', "%#{search_term}%")
+    end
 
     if params[:category]
-      @items = @items.where(:category_id => params[:category]).page(params[:page]).per(10)      
+      @items = @items.where(:category_id => params[:category])
     end
 
-    if params[:item]
-       search_term = params[:item]
-       @items = @items.where("name LIKE ?", "%#{search_term}%").page(params[:page]).per(10)
-    end
-    
     @items = @items.order("name ASC").page(params[:page]).per(10)
     @item = Item.new
     
@@ -65,8 +67,15 @@ class ItemsController < ApplicationController
   
   def destroy
     @item = @user.items.find(params[:id])
-    @item.destroy
-    redirect_to items_url, notice: "Item has been deleted."
+
+    respond_to do |format|
+      if @item.destroy
+        format.html {redirect_to items_url, notice: "Item has been deleted."}
+        format.js
+      else
+        format.html {render :index, notice: "Error deleting item."}
+      end
+    end
   end
   
 end

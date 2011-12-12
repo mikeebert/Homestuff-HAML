@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/gmassanek/rails3-jquery-autocomplete.git
+  revision: 409e33d8ebd98bcaff564a3754bda1c596063dca
+  specs:
+    rails3-jquery-autocomplete (1.0.5)
+      rails (~> 3.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -123,6 +130,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   rails (= 3.1.2)
+  rails3-jquery-autocomplete!
   sass-rails (~> 3.1.5.rc.2)
   sqlite3
   turn (= 0.8.2)

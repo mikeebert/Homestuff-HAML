@@ -7,9 +7,9 @@
     %th remove
     
   - @items.each do |item|
-    %tr
+    %tr{:id => dom_id(item)}
       %td= link_to item.name, edit_item_url(item), class: 'item_link', :id => dom_id(item), :remote => true
       %td= item.acquired_on.strftime("%b %Y")
       %td= item.category.title
       %td= item.condition.shape
-      %td.delete_item= link_to "x", item, confirm: "Are you sure?", method: :delete
+      %td= link_to "x", item, confirm: "Are you sure?", method: :delete, remote: true
